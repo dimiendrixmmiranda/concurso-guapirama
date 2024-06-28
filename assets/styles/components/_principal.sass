@@ -1,0 +1,90 @@
+@import '../abstract/_variaveis'
+.principal
+    width: 95%
+    margin: 0 auto
+    font-family: $fonte-primaria
+    .principal-titulo
+        text-align: center
+        padding-top: 1.5em
+    .principal-menu
+        max-width: 100%
+        margin: 1.5em auto 0 auto
+        display: flex
+        flex-direction: column
+        h2
+            margin: .5em 0
+        ul
+            white-space: nowrap
+            overflow-x: scroll
+            overflow-y: hidden
+            scroll-behavior: smooth
+            li
+                display: inline
+                a
+                    background-color: $laranja
+                    text-decoration: none
+                    border-radius: 4px
+                    color: black
+                    font-size: 1.4em
+                    padding: .4em
+                    border-radius: 4px
+                    color: $branco
+    .principal-resultado
+        width: 100%
+        margin: 1.5em 0
+        display: flex
+        flex-direction: column
+        .container
+            .container-titulo
+                font-size: 1.6em
+                text-align: center
+                padding: .5em 0
+            .container-tabela
+                display: flex
+                flex-direction: column
+                thead
+                    tr
+                        width: 100%
+                        display: grid
+                        grid-template-columns: 10% 50% 20% 20%
+                        background-color: $laranja
+                        color: $branco
+                        td
+                            text-align: center
+                            overflow-x: scroll
+                            overflow-y: hidden
+                            padding: 0 .5em
+                            border: solid 1px black
+                            font-size: 1.2em
+                tbody
+                    tr
+                        width: 100%
+                        display: grid
+                        grid-template-columns: 10% 50% 20% 20%
+                        &:nth-child(even)
+                            background-color: $cinza-medio
+                            color: $branco
+                        td
+                            overflow-x: scroll
+                            overflow-y: hidden
+                            white-space: nowrap
+                            font-size: 1.1em
+                            padding: .2em .5em
+                            border: solid 1px black
+                            &:nth-child(1), &:nth-child(4)
+                                text-align: center
+    .principal-ancora
+        position: fixed
+        bottom: 2%
+        right: 6%
+        width: 40px
+        height: 40px
+        border-radius: 100%
+        background-color: black
+        display: flex
+        justify-content: center
+        align-items: center
+        text-align: center
+        a
+            text-decoration: none
+            color: $branco
