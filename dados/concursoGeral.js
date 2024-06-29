@@ -2595,7 +2595,7 @@ const string = `|Advogado| ADILSON RODRIGO DE OLIVEIRA 014.103.047-39 76.60 APRO
 |Técnico em Contabilidade| JEAN WILLIAN CAMPOS 014.103.056-17 53.26 APROVADO 
 |Técnico em Contabilidade| JÉSSICA APARECIDA DE BRITO 014.102.971-65 0.00 AUSENTE 
 |Técnico em Contabilidade| SAVIO RAMON RODRIGUES ROMÃO 014.103.054-57 36.62 ELIMINADO`
-
+export const arrayDeDados = []
 const arrayParticipantesConcurso = []
 string.split(/\n/).forEach(candidato => {
     const objetoParticipante = {
@@ -2658,7 +2658,7 @@ const farmaceuticoBioquimico = [
     arrayParticipantesConcurso.filter(candidato => candidato.categoria == 'Farmacêutico/Bioquímico').filter(candidato => candidato.situacao == 'AUSENTE'),
     arrayParticipantesConcurso.filter(candidato => candidato.categoria == 'Farmacêutico/Bioquímico').filter(candidato => candidato.situacao == 'ELIMINADO').sort((a, b) => b.nota - a.nota),
 ]
-const Fisioterapeuta = [
+const fisioterapeuta = [
     arrayParticipantesConcurso.filter(candidato => candidato.categoria == 'Fisioterapeuta').filter(candidato => candidato.situacao == 'APROVADO').sort((a, b) => b.nota - a.nota),
     arrayParticipantesConcurso.filter(candidato => candidato.categoria == 'Fisioterapeuta').filter(candidato => candidato.situacao == 'AUSENTE'),
     arrayParticipantesConcurso.filter(candidato => candidato.categoria == 'Fisioterapeuta').filter(candidato => candidato.situacao == 'ELIMINADO').sort((a, b) => b.nota - a.nota),
@@ -2738,3 +2738,30 @@ const tecnicoEmContabilidade = [
     arrayParticipantesConcurso.filter(candidato => candidato.categoria == 'Técnico em Contabilidade').filter(candidato => candidato.situacao == 'AUSENTE'),
     arrayParticipantesConcurso.filter(candidato => candidato.categoria == 'Técnico em Contabilidade').filter(candidato => candidato.situacao == 'ELIMINADO').sort((a, b) => b.nota - a.nota),
 ]
+
+arrayDeDados.push(advogados)
+arrayDeDados.push(agenteAuxiliardeCreche)
+arrayDeDados.push(agentedeApoioEducacional)
+arrayDeDados.push(agentedeControledeEndemias)
+arrayDeDados.push(auxiliarAdministrativo)
+arrayDeDados.push(auxiliardeObraseServiçosPublicos)
+arrayDeDados.push(auxiliardeServiçosGerais)
+arrayDeDados.push(coveiro)
+arrayDeDados.push(enfermeiro)
+arrayDeDados.push(farmaceuticoBioquimico)
+arrayDeDados.push(fisioterapeuta)
+arrayDeDados.push(medico)
+arrayDeDados.push(motorista)
+arrayDeDados.push(odontologo)
+arrayDeDados.push(peradorDeMaquinasRodoviariasEAgricolas)
+arrayDeDados.push(orientadorSocial)
+arrayDeDados.push(pedreiro)
+arrayDeDados.push(pintor)
+arrayDeDados.push(professorEducaçãoInfantil)
+arrayDeDados.push(professorEnsinoFundamental)
+arrayDeDados.push(professorEnsinoFundamentalIIArtes)
+arrayDeDados.push(professorEnsinoFundamentalIIEducaçãoFisica)
+arrayDeDados.push(ProfessorEnsinoFundamentalIIIngles)
+arrayDeDados.push(psicologo)
+arrayDeDados.push(secretarioDeEscola)
+arrayDeDados.push(tecnicoEmContabilidade)
