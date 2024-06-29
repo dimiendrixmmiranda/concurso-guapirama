@@ -283,7 +283,7 @@ const arrayCandidatosFormatado = []
 arrayCandidatosAprovados.forEach(candidato => {
     const cpf = candidato.match(/(\d+){3}\.(\d+){3}\.(\d+){3}-(\d+){2}/gi)
     const nota = candidato.match(/\s(\d+){1,2}\.(\d+){2}\s/gi)
-    const nome = candidato.match(/([A-ZÂÊÎÔÁÉÍÓÚÇ]+)\s([A-ZÂÊÎÔÁÉÍÓÚÇ]+)\s([A-ZÂÊÎÔÁÉÍÓÚÇ]+)?\s?([A-ZÂÊÎÔÁÉÍÓÚÇ]+)?\s?([A-ZÂÊÎÔÁÉÍÓÚÇ]+)?\s?([A-ZÂÊÎÔÁÉÍÓÚÇ]+)?\s?/gi)
+    const nome = candidato.match(/([A-ZÃÂÊÎÔÁÉÍÓÚÇ]+)\s([A-ZÃÂÊÎÔÁÉÍÓÚÇ]+)\s([A-ZÃÂÊÎÔÁÉÍÓÚÇ]+)?\s?([A-ZÃÂÊÎÔÁÉÍÓÚÇ]+)?\s?([A-ZÃÂÊÎÔÁÉÍÓÚÇ]+)?\s?([A-ZÃÂÊÎÔÁÉÍÓÚÇ]+)?\s?/gi)
     const objetoCandidato = {
         nome: nome[0],
         cpf: cpf[0],
