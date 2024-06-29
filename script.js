@@ -7,9 +7,9 @@ arrayDeDados.forEach(categoria => {
     container.id = idCategoria
     container.classList.add('principal-resultado-container')
     const containerTitulo = document.createElement('h2')
-    containerTitulo.innerHTML = categoria[0][0].categoria 
+    containerTitulo.innerHTML = categoria[0][0].categoria
     containerTitulo.classList.add('principal-resultado-container-titulo')
-    // containerTitulo.innerHTML = categoria[0].categoria
+
     const tabelaAprovados = criarTabela(categoria[0], true, true)
     const tabelaAusentes = criarTabela(categoria[1], false, false)
     const tabelaEliminados = criarTabela(categoria[2], false, false)
@@ -17,10 +17,18 @@ arrayDeDados.forEach(categoria => {
     container.appendChild(tabelaAprovados)
     container.appendChild(tabelaEliminados)
     container.appendChild(tabelaAusentes)
+
+    const qtdePosicao = container.querySelectorAll('tbody tr').length
+    container.querySelectorAll('.posicao').forEach((item, i) => {
+        if (item != undefined) {
+            item.innerHTML = `${i + 1}º`
+        }
+    })
+    // console.log(qtdePosicao)
     elementoResultado.appendChild(container)
 })
 
-function criarTabela(arrayDeParticipantes, cabecalho = false, inserirPosicao = false) {
+function criarTabela(arrayDeParticipantes, cabecalho = false) {
     const table = document.createElement('table')
     const thead = document.createElement('thead')
     if (cabecalho) {
@@ -45,14 +53,10 @@ function criarTabela(arrayDeParticipantes, cabecalho = false, inserirPosicao = f
 
     const tbody = document.createElement('tbody')
 
-    arrayDeParticipantes.forEach((participante, posicao) => {
+    arrayDeParticipantes.forEach((participante) => {
         const trBody = document.createElement('tr')
         const tdPosicao = document.createElement('td')
-        if(inserirPosicao){
-            tdPosicao.innerHTML = `${posicao + 1}º`
-        }else{
-            tdPosicao.innerHTML = `0º`
-        }
+        tdPosicao.classList.add('posicao')
         const tdNome = document.createElement('td')
         tdNome.innerHTML = participante.nome
         const tdInscricao = document.createElement('td')
