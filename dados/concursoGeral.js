@@ -2599,10 +2599,10 @@ export const arrayDeDados = []
 const arrayParticipantesConcurso = []
 string.split(/\n/).forEach(candidato => {
     const objetoParticipante = {
-        nome: candidato.split(/\d.*/gi).filter(a => a)[0].split(/\|.*\|/gi).filter(a => a)[0],
+        nome: candidato.match(/([A-ZÀ-ÙÇ]{2,})\s([A-ZÀ-ÙÇ]{2,})\s?([A-ZÀ-ÙÇ]{2,})?\s?([A-ZÀ-ÙÇ]{2,})?\s?([A-ZÀ-ÙÇ]{2,})?\s?([A-ZÀ-ÙÇ]{2,})?\s?([A-ZÀ-ÙÇ]{2,})?\s?([A-ZÀ-ÙÇ]{2,})?/gm)[0],
         categoria: candidato.match(/\|.*\|/gi)[0].replace('|', '').replace('|', ''),
-        inscricao: candidato.match(/(\d+){3}\.(\d+){3}\.(\d+){3}-(\d+){2}/gi)[0],
-        nota: candidato.match(/\s(\d+){1,2}\.(\d+){2}\s/gi)[0].trim(),
+        inscricao: candidato.match(/(\d{3})\.(\d{3})\.(\d{3})-(\d{2})/gi)[0],
+        nota: candidato.match(/(\d{2})\.(\d{2})/gi)[0],
         situacao: candidato.match(/APROVADO|AUSENTE|ELIMINADO/gi)[0],
     }
     arrayParticipantesConcurso.push(objetoParticipante)
